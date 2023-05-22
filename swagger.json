@@ -1,0 +1,41 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Comments API by Emory Hubbard",
+    "description": "A comments API for the Way of the Server tutorial site. It will provide for access to and storage of individual comments, as well as the associated user accounts.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/allComments": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/comments": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  }
+}
