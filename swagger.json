@@ -5,10 +5,10 @@
     "description": "A comments API for the Way of the Server tutorial site. It will provide for access to and storage of individual comments, as well as the associated user accounts.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "comments-api-2slc.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {

@@ -19,17 +19,17 @@ content-type: application/json
 
 
 ###
-GET https://backendii-api.onrender.com/allcomments###
+GET https://comments-api-2slc.onrender.com/allcomments
 ###
-GET https://backendii-api.onrender.com/comments?id=646af6c550c3033383568f1c
+GET https://comments-api-2slc.onrender.com/comments?id=646af6c550c3033383568f1c
 ###
-POST https://backendii-api.onrender.com/comments HTTP/1.1
+POST https://comments-api-2slc.onrender.com/comments HTTP/1.1
 content-type: application/json
 
 {
-    "username": "emoryhubbard",
+    "username": "bobthebuilder",
     "timestamp": 1519211809934,
-    "body": "First comment on the way-of-the-server tutorial page",
+    "body": "Third comment on the way-of-the-server tutorial page",
     "page": "tutorial",
     "parent": "none"
 }
