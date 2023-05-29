@@ -42,16 +42,19 @@ class DBConnection {
         this.initIfNeeded();
         const cursor = await this.client.db(dbName).collection(collection).insertOne(json);
         console.log("createDocument cursor: ", cursor);
+        return cursor;
     }
     async updateDocument(query, collection, json) {
         this.initIfNeeded();
         const cursor = await this.client.db(dbName).collection(collection).replaceOne(query, json);
         console.log("updateDocument cursor: ", cursor);
+        return cursor;
     }
     async deleteDocument(query, collection) {
         this.initIfNeeded();
         const cursor = await this.client.db(dbName).collection(collection).deleteOne(query);
         console.log("deleteDocument cursor: ", cursor);
+        return cursor;
     }
 }
 

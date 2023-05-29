@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/allComments": {
+    "/all-comments": {
       "get": {
         "description": "",
         "parameters": [],
@@ -32,6 +32,16 @@
         "responses": {}
       },
       "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "put": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
         "description": "",
         "parameters": [],
         "responses": {}

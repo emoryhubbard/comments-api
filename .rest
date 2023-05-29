@@ -1,9 +1,13 @@
 // localhost testing
 
 ###
-GET http://localhost:3000/allcomments
+GET http://localhost:3000/all-comments
 ###
-GET http://localhost:3000/comments?id=646af6c550c3033383568f1c
+GET http://localhost:3000/all-comments?id=646aff5b3133bff03513870d
+###
+GET http://localhost:3000/comments?id=6473ffeae585e1207fd51af5
+###
+GET http://localhost:3000/comments?id=
 ###
 POST http://localhost:3000/comments HTTP/1.1
 content-type: application/json
@@ -15,23 +19,100 @@ content-type: application/json
     "page": "tutorial",
     "parent": "none"
 }
+###
+POST http://localhost:3000/comments HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+    "timestamp": 1519211809934,
+    "body": "First comment on the way-of-the-server tutorial page",
+    "page": "tutorial",
+    "parent": "none"
+}
+###
+PUT http://localhost:3000/comments?id=6473ffeae585e1207fd51af5 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "emoryhubbard",
+    "timestamp": 1519211809934,
+    "body": "[Edit 6] First comment on the way-of-the-server tutorial page",
+    "page": "tutorial",
+    "parent": "none"
+}
+###
+PUT http://localhost:3000/comments?id=6473ffeae585e1207fd51af5 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+    "timestamp": 1519211809934,
+    "body": "Edited body",
+    "page": "tutorial",
+    "parent": "none"
+}
+###
+DELETE http://localhost:3000/comments?id=6473ffeae585e1207fd51af5 HTTP/1.1
+###
+DELETE http://localhost:3000/comments?id= HTTP/1.1
+
 // production testing
-
+// https://comments-api-2slc.onrender.com/
 
 ###
-GET https://comments-api-2slc.onrender.com/allcomments
+GET https://comments-api-2slc.onrender.com/all-comments
 ###
-GET https://comments-api-2slc.onrender.com/comments?id=646af6c550c3033383568f1c
+GET https://comments-api-2slc.onrender.com/all-comments?id=646aff5b3133bff03513870d
+###
+GET https://comments-api-2slc.onrender.com/comments?id=646aff5b3133bff03513870d
+###
+GET https://comments-api-2slc.onrender.com/comments?id=
 ###
 POST https://comments-api-2slc.onrender.com/comments HTTP/1.1
 content-type: application/json
 
 {
-    "username": "bobthebuilder",
+    "username": "emoryhubbard",
     "timestamp": 1519211809934,
-    "body": "Third comment on the way-of-the-server tutorial page",
+    "body": "First comment on the way-of-the-server tutorial page",
     "page": "tutorial",
     "parent": "none"
 }
+###
+POST https://comments-api-2slc.onrender.com/comments HTTP/1.1
+content-type: application/json
 
+{
+    "username": "",
+    "timestamp": 1519211809934,
+    "body": "First comment on the way-of-the-server tutorial page",
+    "page": "tutorial",
+    "parent": "none"
+}
+###
+PUT https://comments-api-2slc.onrender.com/comments?id=6473e6bd6357b8f9aa45ae90 HTTP/1.1
+content-type: application/json
 
+{
+    "username": "emoryhubbard",
+    "timestamp": 1519211809934,
+    "body": "[Edit 6] First comment on the way-of-the-server tutorial page",
+    "page": "tutorial",
+    "parent": "none"
+}
+###
+PUT https://comments-api-2slc.onrender.com/comments?id=6473e6bd6357b8f9aa45ae90 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+    "timestamp": 1519211809934,
+    "body": "Edited body",
+    "page": "tutorial",
+    "parent": "none"
+}
+###
+DELETE https://comments-api-2slc.onrender.com/comments?id=6473fff8e585e1207fd51af6 HTTP/1.1
+###
+DELETE https://comments-api-2slc.onrender.com/comments?id= HTTP/1.1

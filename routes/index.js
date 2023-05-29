@@ -10,8 +10,10 @@ const commentsController = new CommentsController(dbConnection);
 
 router.use('/', swaggerUI.serve);
 router.get('/', swaggerUI.setup(swaggerDocument));
-router.get('/allComments', commentsController.allCommentsRoute.bind(commentsController));
-router.get('/comments', commentsController.oneCommentRoute.bind(commentsController));
+router.get('/all-comments', commentsController.allCommentsRoute.bind(commentsController));
+router.get('/comments', commentsController.readCommentRoute.bind(commentsController));
 router.post('/comments', commentsController.createCommentRoute.bind(commentsController));
+router.put('/comments', commentsController.updateCommentRoute.bind(commentsController));
+router.delete('/comments',commentsController.deleteCommentRoute.bind(commentsController));
 
 module.exports = router;
