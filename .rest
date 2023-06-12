@@ -37,7 +37,7 @@ content-type: application/json
 {
     "username": "emoryhubbard",
     "timestamp": 1519211809934,
-    "body": "[Edit 6] First comment on the way-of-the-server tutorial page",
+    "body": "[Edit 7] First comment on the way-of-the-server tutorial page",
     "page": "tutorial",
     "parent": "none"
 }
@@ -56,6 +56,7 @@ content-type: application/json
 DELETE http://localhost:3000/comments?id=6474269ea0696afd0da2a31a HTTP/1.1
 ###
 DELETE http://localhost:3000/comments?id= HTTP/1.1
+
 
 // production testing
 // https://comments-api-2slc.onrender.com/
@@ -116,3 +117,148 @@ content-type: application/json
 DELETE https://comments-api-2slc.onrender.com/comments?id=64740c4200570c8d14e431be HTTP/1.1
 ###
 DELETE https://comments-api-2slc.onrender.com/comments?id= HTTP/1.1
+
+// userinfo localhost testing
+
+###
+GET http://localhost:3000/all-userinfo
+###
+GET http://localhost:3000/all-userinfo?id=6474269ea0696afd0da2a31a
+###
+GET http://localhost:3000/userinfo?id=6473ffeae585e1207fd51af5
+###
+GET http://localhost:3000/userinfo?id=
+###
+POST http://localhost:3000/userinfo HTTP/1.1
+content-type: application/json
+
+{
+    "username": "claudeshannon",
+	"email": "claudeshannon@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "light",
+	"rank": "jedimaster",
+	"role": "moderator",
+	"badges": ["gold", "silver", "bronze", "first-post"],
+	"aboutme": "Tries to keep his robotic mouse army from causing harm."
+}
+###
+POST http://localhost:3000/userinfo HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+PUT http://localhost:3000/userinfo?id=6473ffeae585e1207fd51af5 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "emoryhubbard",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "[Edit 1] Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+PUT http://localhost:3000/userinfo?id=6473ffeae585e1207fd51af5 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "[Edit 1] Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+DELETE http://localhost:3000/userinfo?id=6474269ea0696afd0da2a31a HTTP/1.1
+###
+DELETE http://localhost:3000/userinfo?id= HTTP/1.1
+
+
+
+// userinfo production testing
+
+###
+GET https://comments-api-2slc.onrender.com/all-userinfo
+###
+GET https://comments-api-2slc.onrender.com/all-userinfo?id=6474269ea0696afd0da2a31a
+###
+GET https://comments-api-2slc.onrender.com/userinfo?id=6473ffeae585e1207fd51af5
+###
+GET https://comments-api-2slc.onrender.com/userinfo?id=
+###
+POST https://comments-api-2slc.onrender.com/userinfo HTTP/1.1
+content-type: application/json
+
+{
+    "username": "emoryhubbard",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+POST https://comments-api-2slc.onrender.com/userinfo HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+PUT https://comments-api-2slc.onrender.com/userinfo?id=6473ffeae585e1207fd51af5 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "emoryhubbard",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "[Edit 1] Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+PUT https://comments-api-2slc.onrender.com/userinfo?id=6473ffeae585e1207fd51af5 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+	"email": "ehubbard@yahoo.com",
+	"usersince": 1519211809934,
+	"mode": "dark",
+	"rank": "padawan",
+	"role": "visitor",
+	"badges": ["bronze", "first-post"],
+	"aboutme": "[Edit 1] Born in Maryland. Still lives in Maryland. Tries to survive mosquitos."
+}
+###
+DELETE https://comments-api-2slc.onrender.com/userinfo?id=6474269ea0696afd0da2a31a HTTP/1.1
+###
+DELETE https://comments-api-2slc.onrender.com/userinfo?id= HTTP/1.1
+
